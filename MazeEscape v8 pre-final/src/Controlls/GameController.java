@@ -67,11 +67,13 @@ public class GameController {
             System.out.print(turnOrder);
             log.append(turnOrder);
             // Log movement history
-            String moveHistory = "Agent " + currentAgent.getId() + " move history (last 5): " + currentAgent.getLastFiveMoves() + "\n";
+            String moveHistory = "Agent " + currentAgent.getId() + " move history (last 5): "
+                    + currentAgent.getLastFiveMoves() + "\n";
             System.out.print(moveHistory);
             log.append(moveHistory);
             // Prompt for action
-            System.out.print("Agent " + currentAgent.getId() + " → move (UP/DOWN/LEFT/RIGHT), BACKTRACK, or USEPOWERUP: ");
+            System.out.print(
+                    "Agent " + currentAgent.getId() + " → move (UP/DOWN/LEFT/RIGHT), BACKTRACK, or USEPOWERUP: ");
             String action;
             try {
                 action = scanner.nextLine().trim().toUpperCase();
@@ -99,7 +101,8 @@ public class GameController {
             // Log maze state
             System.out.println("Maze after Agent " + currentAgent.getId() + "'s turn:");
             maze.printMazeSnapshot();
-            log.append("Maze after Agent " + currentAgent.getId() + "'s turn:\n").append(getMazeSnapshot()).append("\n");
+            log.append("Maze after Agent " + currentAgent.getId() + "'s turn:\n").append(getMazeSnapshot())
+                    .append("\n");
             // Rotate a random corridor
             int rowId = rand.nextInt(maze.getHeight());
             System.out.println("Attempting to rotate corridor row " + rowId);
@@ -151,7 +154,8 @@ public class GameController {
             case "RIGHT":
                 if (maze.isValidMove(agent.getCurrentX(), agent.getCurrentY(), action)) {
                     agent.move(action);
-                    String result = "Agent " + agent.getId() + " moved to (" + agent.getCurrentX() + "," + agent.getCurrentY() + ")";
+                    String result = "Agent " + agent.getId() + " moved to (" + agent.getCurrentX() + ","
+                            + agent.getCurrentY() + ")";
                     System.out.println(result);
                     return result;
                 } else {
@@ -164,7 +168,8 @@ public class GameController {
                     int oldX = agent.getCurrentX();
                     int oldY = agent.getCurrentY();
                     agent.backtrack(1);
-                    String result = "Agent " + agent.getId() + " backtracked to (" + agent.getCurrentX() + "," + agent.getCurrentY() + ")";
+                    String result = "Agent " + agent.getId() + " backtracked to (" + agent.getCurrentX() + ","
+                            + agent.getCurrentY() + ")";
                     System.out.println(result);
                     return result;
                 } else {
@@ -178,7 +183,8 @@ public class GameController {
                     int oldX = agent.getCurrentX();
                     int oldY = agent.getCurrentY();
                     agent.applyPowerUp();
-                    String result = "Agent " + agent.getId() + " teleported to (" + agent.getCurrentX() + "," + agent.getCurrentY() + ")";
+                    String result = "Agent " + agent.getId() + " teleported to (" + agent.getCurrentX() + ","
+                            + agent.getCurrentY() + ")";
                     System.out.println(result);
                     return result;
                 } else {
@@ -228,7 +234,7 @@ public class GameController {
         log.append("-------|-------|-------|-------|-------|-------\n");
         for (int i = 0; i < agents.size(); i++) {
             Agent agent = agents.get(i);
-            String stats = String.format("Agent%d | %d    | %d | %d | %d | %d",
+            String stats = String.format("Agent%d |   %d   |   %d   |   %d   |   %d   |   %d",
                     agent.getId(),
                     agent.getTotalMoves(),
                     agent.getBacktracks(),

@@ -1,0 +1,42 @@
+Simulation started
+Initial maze state:
+E G 
+A0 E 
+
+Turn 1: Agent 0's turn
+Current turn order: [Agent 0]
+Agent 0 move history (last 5): [1,0]
+Agent 0 action: UP
+Action result: Agent 0 moved to (0,0)
+Maze after Agent 0's turn:
+A0 G 
+E E 
+
+Attempting to rotate corridor row 0
+Turn 2: Agent 0's turn
+Current turn order: [Agent 0]
+Agent 0 move history (last 5): [0,0, 1,0]
+Agent 0 action: LEFT
+Action result: Agent 0 moved to (0,0)
+Agent 0 reached the goal!
+Maze after Agent 0's turn:
+G E 
+E E 
+
+Attempting to rotate corridor row 1
+All agents have reached the goal! Game over.
+Final maze state:
+G E 
+E E 
+
+Goal reach order: [0]
+
+=== Simulation Summary ===
+Total number of turns executed: 2
+Average number of moves per agent: 2,00
+Winner (first to reach goal): Agent 0
+
+Per-Agent Statistics:
+Agent   | Moves | Backs | Traps | Power | Stack
+-------|-------|-------|-------|-------|-------
+Agent0 |   2   |   0   |   0   |   0   |   3
